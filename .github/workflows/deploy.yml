@@ -1,1 +1,48 @@
+# 🌌 Infinite Love Deployment Workflow - Version 2026
+# Đặc quyền dành riêng cho Khang & Hồng Anh
+name: Deploy Infinite Love 2026
 
+on:
+  push:
+    branches: ["main"] # Tự động chạy khi Khang nhấn Commit trên nhánh main
+  workflow_dispatch:      # Cho phép Khang nhấn nút chạy thủ công
+
+# Thiết lập quyền hạn bảo mật tối ưu
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Tránh chồng chéo các phiên bản Deploy
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🌐 Setup GitHub Pages environment
+        uses: actions/configure-pages@v5
+
+      - name: 📦 Upload Web Artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Deploy toàn bộ code (chứa index.html) trong thư mục gốc
+          path: '.'
+
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: ✨ Final Status
+        run: |
+          echo "Thiên đình báo tin: Vũ trụ tình yêu đã được khởi tạo thành công!"
+          echo "Địa chỉ dành cho Hồng Anh: ${{ steps.deployment.outputs.page_url }}"
+          
