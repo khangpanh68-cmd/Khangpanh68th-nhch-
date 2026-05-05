@@ -1,0 +1,41 @@
+# Phiên bản Deploy Tối Thượng cho Hồng Anh - 2026
+name: Deploy Love Universe 2026
+
+on:
+  push:
+    branches: ["main"] # Tự động deploy mỗi khi Khang cập nhật code
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Triển khai toàn bộ thư mục hiện tại
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Success Notification
+        run: echo "Vũ trụ của Hồng Anh đã được khởi tạo thành công tại địa chỉ phía trên!"
