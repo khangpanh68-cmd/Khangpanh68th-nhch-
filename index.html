@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Thiên Đình Chi Chỉ | Khang ❤️ Hồng Anh</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Orbitron:wght@400;900&family=Quicksand:wght@300;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --god-gold: #ffca3a;
+            --love-pink: #ff4d6d;
+            --space-dark: #0b090a;
+            --holy-light: #fff3b0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            height: 100vh;
+            background: var(--space-dark);
+            overflow: hidden;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        /* NỀN VŨ TRỤ */
+        #universe { position: fixed; inset: 0; background: radial-gradient(circle at center, #1a050a 0%, #050505 100%); z-index: -1; }
+        .star { position: absolute; background: white; border-radius: 50%; opacity: 0.5; animation: twinkle var(--d) infinite; }
+        @keyframes twinkle { 0%, 100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 1; transform: scale(1.2); } }
+
+        /* CỔNG TRỜI */
+        #god-gate {
+            position: fixed; inset: 0; background: black; z-index: 10000;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            transition: 2s cubic-bezier(0.8, 0, 0.2, 1);
+        }
+        .holy-btn {
+            width: 120px; height: 120px; border: 3px solid var(--god-gold); border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            cursor: pointer; box-shadow: 0 0 30px var(--god-gold);
+            animation: pulse-gold 2s infinite;
+        }
+        @keyframes pulse-gold { 0% { box-shadow: 0 0 10px var(--god-gold); } 50% { box-shadow: 0 0 50px var(--god-gold); } 100% { box-shadow: 0 0 10px var(--god-gold); } }
+
+        /* APP CHÍNH */
+        #main-god-app {
+            display: none; opacity: 0; height: 100vh;
+            flex-direction: column; align-items: center; justify-content: center;
+            transition: 3s ease;
+        }
+
+        .days-box {
+            font-family: 'Orbitron', sans-serif; font-size: 6rem; font-weight: 900;
+            background: linear-gradient(to bottom, #fff, var(--god-gold));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px var(--god-gold));
+        }
+
+        /* PHONG BÌ THÁNH CHỈ */
+        .holy-envelope {
+            position: relative; width: 340px; height: 220px;
+            background: linear-gradient(135deg, #800f2f, #ff4d6d);
+            border: 3px solid var(--god-gold); border-radius: 15px;
+            cursor: pointer; overflow: hidden;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            box-shadow: 0 0 40px rgba(255, 77, 109, 0.4);
+            transition: 0.5s;
+        }
+        .holy-envelope:hover { transform: scale(1.03); box-shadow: 0 0 60px var(--love-pink); }
+        
+        .env-text { color: var(--god-gold); text-align: center; font-family: 'Orbitron'; line-height: 1.8; }
+        .env-text b { font-size: 1.2rem; display: block; filter: drop-shadow(0 0 5px gold); }
+
+        /* TỜ SỨ ĐIỆP (LỜI CHÚC) */
+        .letter-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.9);
+            display: none; justify-content: center; align-items: center; z-index: 10001;
+        }
+        .scroll-paper {
+            background: #fdf0d5; width: 90%; max-width: 400px;
+            padding: 40px 30px; border-radius: 5px;
+            border-left: 15px solid #c9184a; border-right: 15px solid #c9184a;
+            box-shadow: 0 0 100px rgba(255, 202, 58, 0.3);
+            transform: scale(0.5); transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .scroll-paper.open { transform: scale(1); }
+
+        .letter-content h2 { font-family: 'Dancing Script'; color: #800f2f; font-size: 2.2rem; margin-bottom: 15px; border-bottom: 1px solid #ddd; }
+        .letter-content p { font-size: 1.1rem; line-height: 1.6; color: #333; font-weight: 600; font-family: 'Quicksand'; }
+
+        .btn-close { margin-top: 20px; background: #800f2f; color: white; border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div id="god-gate">
+        <div class="holy-btn" onclick="openHeaven()">
+            <i class="fa-solid fa-crown" style="color: var(--god-gold); font-size: 3.5rem;"></i>
+        </div>
+        <h2 style="color: white; margin-top: 30px; font-family: 'Orbitron'; letter-spacing: 5px; font-size: 0.7rem;">KHAI MỞ THIÊN ĐÌNH</h2>
+    </div>
+
+    <div id="universe"></div>
+    <audio id="bgMusic" loop><source src="https://files.catbox.moe/6qjxys" type="audio/mpeg"></audio>
+
+    <div id="main-god-app">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <p style="color: var(--god-gold); font-family: 'Orbitron'; letter-spacing: 3px; font-size: 0.8rem;">VŨ TRỤ ĐÃ CHỨNG KIẾN</p>
+            <div id="days-count" class="days-box">0</div>
+            <p style="color: white; font-weight: 600;">NGÀY HẠNH PHÚC CỦA HỒNG ANH</p>
+        </div>
+
+        <div class="holy-envelope" onclick="showLetter()">
+            <div class="env-text">
+                <i class="fa-solid fa-scroll" style="font-size: 2.5rem; margin-bottom: 15px;"></i>
+                <b>THIÊN ĐÌNH CÓ CHỈ</b>
+                <span>HỒNG ANH TIẾP CHỈ!</span>
+            </div>
+            <div style="position: absolute; bottom: 10px; font-size: 0.6rem; color: rgba(255,255,255,0.5); font-family: 'Orbitron';">CHẠM ĐỂ KHAI CHỈ</div>
+        </div>
+
+        <div style="margin-top: 40px; color: white; font-size: 0.8rem; opacity: 0.6; font-family: 'Orbitron';">
+            DESIGNED BY KHANG ❤️
+        </div>
+    </div>
+
+    <div id="letter-overlay" class="letter-overlay">
+        <div class="scroll-paper" id="scroll">
+            <div class="letter-content">
+                <h2>Gửi Hồng Anh ❤️</h2>
+                <p id="wish-text"></p>
+                <div style="margin-top: 20px; font-family: 'Dancing Script'; font-size: 1.4rem; color: #c9184a; text-align: right;">
+                    — Khang trân bút —
+                </div>
+                <center><button class="btn-close" onclick="closeLetter()">TUÂN CHỈ!</button></center>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('bgMusic');
+
+        function openHeaven() {
+            audio.play();
+            document.getElementById('god-gate').style.transform = 'scale(0) rotate(360deg)';
+            document.getElementById('god-gate').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('god-gate').style.display = 'none';
+                const app = document.getElementById('main-god-app');
+                app.style.display = 'flex';
+                setTimeout(() => app.style.opacity = '1', 100);
+                createStars();
+            }, 1500);
+            updateDays();
+        }
+
+        function createStars() {
+            const universe = document.getElementById('universe');
+            for(let i=0; i<150; i++) {
+                let star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = Math.random() * 3 + 'px';
+                star.style.height = star.style.width;
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.setProperty('--d', Math.random() * 3 + 2 + 's');
+                universe.appendChild(star);
+            }
+        }
+
+        function updateDays() {
+            const start = new Date('2023-01-21'); // Sửa ngày kỷ niệm tại đây
+            const now = new Date();
+            const diff = Math.floor((now - start) / (1000 * 60 * 60 * 24));
+            document.getElementById('days-count').innerText = diff;
+        }
+
+        function getGodWish() {
+            const now = new Date();
+            const date = now.getDate();
+            const month = now.getMonth() + 1;
+            const hour = now.getHours();
+            
+            // 1. Kiểm tra Ngày Lễ
+            if (date === 1 && month === 1) return "Thiên Đình hân hoan! Chúc Hồng Anh năm mới vạn sự như ý, luôn là ngôi sao sáng nhất của anh!";
+            if (date === 14 && month === 2) return "Valentine đến rồi! Thánh chỉ ban xuống: Hồng Anh phải được yêu thương gấp bội lần ngày thường!";
+            if (date === 8 && month === 3) return "Chúc mừng ngày Quốc tế Phụ nữ! Chúc tiên nữ Hồng Anh luôn xinh đẹp, rạng rỡ và hạnh phúc bên anh!";
+            if (date === 20 && month === 10) return "Ngày 20/10, Thiên Đình chúc Hồng Anh luôn trẻ mãi không già, nụ cười luôn nở trên môi!";
+            if (date === 24 && month === 12) return "Giáng sinh an lành! Chúc Hồng Anh của anh ấm áp hơn bao giờ hết, yêu em rất nhiều!";
+            if (date === 21 && month === 1) return "Kỷ niệm ngày đôi ta bắt đầu! Cảm ơn Hồng Anh đã xuất hiện trong cuộc đời anh!";
+
+            // 2. Kiểm tra Buổi trong ngày
+            if (hour >= 5 && hour < 11) return "Thánh chỉ báo: Chúc Hồng Anh buổi sáng tràn đầy năng lượng, khởi đầu ngày mới thật suôn sẻ nhé!";
+            if (hour >= 11 && hour < 14) return "Giờ lành đã đến: Hồng Anh nhớ dùng bữa thật ngon và nghỉ trưa một chút cho khỏe nhé bé yêu!";
+            if (hour >= 14 && hour < 18) return "Tin từ tinh tú: Buổi chiều làm việc/học tập hăng say nhé, có anh luôn ở đây ủng hộ em!";
+            if (hour >= 18 && hour < 22) return "Trăng đã lên cao: Chúc Hồng Anh một buổi tối ấm áp, gạt bỏ hết mệt mỏi để thư giãn nhé!";
+            return "Vũ trụ yên tĩnh: Đã muộn rồi, Hồng Anh của anh hãy đi ngủ ngon và mơ những giấc mơ đẹp nhất về anh nhé! G9 ❤️";
+        }
+
+        function showLetter() {
+            document.getElementById('wish-text').innerText = getGodWish();
+            document.getElementById('letter-overlay').style.display = 'flex';
+            setTimeout(() => {
+                document.getElementById('scroll').classList.add('open');
+            }, 100);
+        }
+
+        function closeLetter() {
+            document.getElementById('scroll').classList.remove('open');
+            setTimeout(() => {
+                document.getElementById('letter-overlay').style.display = 'none';
+            }, 500);
+        }
+    </script>
+</body>
+</html>
