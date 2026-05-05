@@ -1,49 +1,47 @@
-# 🌌 Hồng Anh - Eternal Love Universe (Version 2026)
+# 🌌 The Multiverse of Love - VIP Infinite 2026
 
-> **"Thiên đình có chỉ: Hồng Anh tiếp chỉ!"** > Một dự án nghệ thuật số được thiết kế riêng cho Hồng Anh, kỷ niệm hành trình hạnh phúc và sự gắn kết vĩnh cửu.
-
----
-
-## ✨ Tính năng "Chấn động Thiên Đình"
-
-Dự án này không chỉ là một trang web đơn thuần, nó là một hệ sinh thái tình yêu được tối ưu hóa cho năm 2026:
-
-* **👑 Giao diện Thánh Chỉ (Holy Decree):** Hệ thống phong bì "Thiên Đình" với hiệu ứng mở thư 4D.
-* **📅 Logic 365 Ngày Thông Minh:** Tự động nhận diện và gửi lời chúc riêng biệt cho từng ngày trong năm.
-* **🎆 Hệ thống Lễ Hội Tự Động:** Nhận diện các ngày lễ lớn (14/2, 8/3, 20/10, Giáng Sinh, Tết...) để hiển thị thông điệp đặc biệt.
-* **⏰ Lời Chúc Theo Thời Gian (Real-time):** Thay đổi nội dung theo 4 buổi: Sáng, Trưa, Chiều, Tối.
-* **💫 Vũ Trụ Parallax:** Hệ thống 200 vì sao tương tác vật lý khi chạm màn hình.
-* **📱 Mobile First:** Tối ưu hóa tuyệt đối cho điện thoại để Hồng Anh có trải nghiệm mượt mà nhất.
+> **"Thiên Đình báo chỉ: Hồng Anh tiếp chỉ!"**
+> Một không gian số đa chiều, kết nối nhịp đập giữa hai phương trời (Việt Nam 🇻🇳 & Đài Loan 🇹🇼), dành riêng cho Hồng Anh.
 
 ---
 
-## 🛠 Công nghệ sử dụng
+## ✨ Tính năng "Infinite 2026"
 
-* **Ngôn ngữ:** HTML5, CSS3 (Modern Glassmorphism), JavaScript (ES6+).
-* **Thư viện đồ họa:** * `FontAwesome 6` cho các biểu tượng thần thánh.
-    * `Animate.css` cho các hiệu ứng chuyển động điện ảnh.
-    * `Google Fonts (Orbitron & Dancing Script)` tạo sự giao thoa giữa công nghệ và lãng mạn.
-* **Triển khai:** GitHub Actions & GitHub Pages (Version 2026).
+Phiên bản nâng cấp này mang đến những công nghệ lãng mạn hàng đầu:
 
----
-
-## 🚀 Hướng dẫn cài đặt cho Khang
-
-Để thay đổi thông tin cá nhân, bạn chỉ cần chỉnh sửa file `index.html`:
-
-1.  **Ngày kỷ niệm:** Tìm dòng `const start = new Date('2023-01-21');` và thay bằng ngày đầu tiên hai bạn bên nhau.
-2.  **Nhạc nền:**
-    Thay link nhạc tại thẻ `<source src="..."` nếu bạn muốn đổi bài hát yêu thích của Hồng Anh.
-3.  **Lời nhắn:**
-    Bạn có thể tùy chỉnh các câu chúc trong hàm `getGodWish()` để thêm những "mật mã riêng" của hai người.
+* **📡 Hệ thống Radar "Nhịp đập 2 phương":** Theo dõi thời gian thực tại Hanoi và Taipei. Radar quét liên tục tượng trưng cho việc dù ở đâu, anh cũng luôn dõi theo em.
+* **🪄 Magic Touch 2.0 (Thần giao cách cảm):** Hiệu ứng chạm ma thuật tỏa ra **Hoa Đào** (Taiwan) và **Hoa Sen** (Việt Nam) kèm ánh sáng Neon rực rỡ.
+* **📅 Lịch Vạn Niên Tình Duyên:** Hiển thị số ngày yêu và lịch ngày tháng năm theo phong cách Typography 3D phát sáng.
+* **📜 Thánh Chỉ Hologram 3D:** Hiệu ứng cuộn giấy đổ bóng sâu, tạo cảm giác tờ sớ đang bay lơ lửng trước mặt khi mở.
+* **🌠 Vũ trụ Parallax:** Nền trời sao chuyển động theo thời gian, tối ưu hóa hiển thị Ultra HD trên mọi thiết bị di động.
 
 ---
 
-## 📦 Cấu trúc thư mục
+## 🛠 Công nghệ sử dụng (Tech Stack)
+
+* **Core:** HTML5, CSS3 (Advanced Glassmorphism & 3D Transforms), JavaScript ES2026.
+* **Graphics:** HTML5 Canvas API cho hệ thống sao rơi và tương tác điểm chạm.
+* **Automation:** GitHub Actions (Deploy.yml v4) cho quy trình triển khai tự động thần tốc.
+* **Icons & Fonts:** `FontAwesome 6.5`, `Orbitron` (Cyber style), `Dancing Script` (Romantic style).
+
+---
+
+## 🚀 Hướng dẫn dành cho Khang
+
+Để vũ trụ này vận hành hoàn hảo, Khang hãy lưu ý các tùy chỉnh trong file `index.html`:
+
+1. **Ngày kỷ niệm:** Cập nhật tại dòng `const start = new Date('2023-01-21');`.
+2. **Âm nhạc:** Thay thế link nhạc tại thẻ `<source src="..."` (Khuyên dùng Catbox.moe để nhạc phát mượt nhất).
+3. **Múi giờ:** Hệ thống đã tự động cấu hình múi giờ `Asia/Ho_Chi_Minh` và `Asia/Taipei`.
+4. **Lời chúc:** Bạn có thể tùy biến các câu sớ trong hàm `openHolyDecree()`.
+
+---
+
+## 📦 Cấu trúc Repository
 
 ```text
-├── index.html          # Mã nguồn chính (Vũ trụ của Hồng Anh)
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml  # Tự động hóa triển khai 2026
-└── README.md           # Tài liệu hướng dẫn này
+│       └── deploy.yml   # Hệ thống triển khai tự động (2026 Version)
+├── index.html           # Linh hồn của vũ trụ (Mã nguồn chính)
+└── README.md            # Sách hướng dẫn Thiên Đình (File này)
